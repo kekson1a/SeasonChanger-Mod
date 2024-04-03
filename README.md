@@ -1,5 +1,5 @@
 # SeasonChanger
-[![Thunderstore](https://img.shields.io/badge/thunderstore-page-3882bf?style=for-the-badge&logo=thunderstore&logoColor=3882bf)](https://localhost)
+[![Thunderstore](https://img.shields.io/badge/thunderstore-page-3882bf?style=for-the-badge&logo=thunderstore&logoColor=3882bf)](https://thunderstore.io/c/ultrakill/p/kekson1a/SeasonChanger)
 ## A mod that lets you change seasons in ULTRAKILL
 
 ## _What are seasons?_
