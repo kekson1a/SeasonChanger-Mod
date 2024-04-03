@@ -13,10 +13,12 @@
   - After installing SeasonChanger, open up the ULTARKILL developer console by pressing F8, then type "setdate". A menu titled "SET DATE" should pop up.
 
 ## Screenshots
-![ULTRAKILL_er45qBXnNI](https://github.com/kekson1a/SeasonChanger-Mod/assets/126417868/46dff885-e540-4ca4-89ad-f89e433af7d2)
-![ULTRAKILL_800QuGFO3c](https://github.com/kekson1a/SeasonChanger-Mod/assets/126417868/7b9aafd9-ed89-4735-a040-4cc4dd2a952a)
-![ULTRAKILL_QwplycU6PU](https://github.com/kekson1a/SeasonChanger-Mod/assets/126417868/4679d13f-3750-4b11-827e-7b0b2d7e6f23)
-![ULTRAKILL_BB7iZw7bQa](https://github.com/kekson1a/SeasonChanger-Mod/assets/126417868/6a284f3d-d022-4422-8d4e-9284335e4a62)
-![ULTRAKILL_NMBK2crRLt](https://github.com/kekson1a/SeasonChanger-Mod/assets/126417868/429e45f4-dd07-436a-9fa2-2cc6e9594f3f)
+![ULTRAKILL_kMgHTEOctK](https://github.com/kekson1a/SeasonChanger-Mod/assets/126417868/79902d6f-033d-434c-9727-df50bffe46e2)
+![ULTRAKILL_er45qBXnNI](https://github.com/kekson1a/SeasonChanger-Mod/assets/126417868/af05c374-1936-417c-9737-79504798eb65)
+![ULTRAKILL_QwplycU6PU](https://github.com/kekson1a/SeasonChanger-Mod/assets/126417868/b3ebed9b-442d-4d98-be73-ce5a5ccbd981)
+![ULTRAKILL_BB7iZw7bQa](https://github.com/kekson1a/SeasonChanger-Mod/assets/126417868/b8b3ad51-43d7-4c65-94b7-eafb3650e57b)
+![ULTRAKILL_NMBK2crRLt](https://github.com/kekson1a/SeasonChanger-Mod/assets/126417868/03f18ac1-3d05-47a7-88fe-3600952b0bff)
+
 ^You can only see April Fools's seasonal event while playing
-![ULTRAKILL_rf5gBDnQzC](https://github.com/kekson1a/SeasonChanger-Mod/assets/126417868/6fe3e349-5d5a-4b71-9502-1bdce8db5bd3)
+![ULTRAKILL_rf5gBDnQzC](https://github.com/kekson1a/SeasonChanger-Mod/assets/126417868/28fd03b6-f166-4a3c-aaba-172864c99f10)
+
