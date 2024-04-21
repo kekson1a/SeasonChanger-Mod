@@ -5,12 +5,13 @@ using UnityEngine;
 
 namespace SeasonChanger.Assets
 {
-    public class LoadBundle : MonoBehaviour
+    [ConfigureSingleton(SingletonFlags.PersistAutoInstance | SingletonFlags.DestroyDuplicates)]
+    public class LoadBundle : MonoSingleton<LoadBundle>
     {
         private AssetBundle _assetBundle;
 
         public delegate void BundleLoaded(AssetBundle bundle);
-        public static event BundleLoaded OnBundleLoaded;
+        public event BundleLoaded OnBundleLoaded;
 
         private void Start()
         {
@@ -37,5 +38,6 @@ namespace SeasonChanger.Assets
 
             OnBundleLoaded?.Invoke(_assetBundle);
         }
+
     }
 }

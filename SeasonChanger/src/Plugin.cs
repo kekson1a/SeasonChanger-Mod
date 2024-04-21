@@ -7,6 +7,7 @@ using HarmonyLib;
 using UnityEngine;
 
 using static SeasonChanger.UI.DateMenu;
+using System.Collections.Generic;
 
 namespace SeasonChanger
 {
@@ -20,11 +21,13 @@ namespace SeasonChanger
 
         private void Awake()
         {
+           //p gameObject.hideFlags = HideFlags.HideAndDontSave;
             // Plugin startup logic
             Logger.LogInfo($"hi, SeasonChanger of version {PluginInfo.VERSION} is loaded");
 			Logger.LogInfo("Open your console with [F8] and type \"datemenu\" to open this mod's menu");
-            DontDestroyOnLoad(new GameObject().AddComponent<DateMenu>());
-            DontDestroyOnLoad(new GameObject().AddComponent<LoadBundle>());
+            var targetObject = new GameObject("SeasonChanger Components");
+            targetObject.AddComponent<DateMenu>();
+            targetObject.AddComponent<LoadBundle>();
 
             new Harmony(PluginInfo.GUID).PatchAll();
 
@@ -57,6 +60,6 @@ namespace SeasonChanger
 	{
         public const string GUID = "kekson1a." + NAME;
 		public const string NAME = "SeasonChanger";
-		public const string VERSION = "0.1.0";
+		public const string VERSION = "0.1.3";
 	}
 }

@@ -8,9 +8,10 @@ using UnityEngine.UI;
 
 namespace SeasonChanger.UI
 {
-    public class DateMenu : MonoBehaviour
+    [ConfigureSingleton(SingletonFlags.PersistAutoInstance | SingletonFlags.DestroyDuplicates)]
+    public class DateMenu : MonoSingleton<DateMenu>
     {
-        public static DateMenu Instance;
+        //public static DateMenu Instance;
         public SeasonalDate SelectedSeason;
         public bool SaveSeason;
 
@@ -20,12 +21,11 @@ namespace SeasonChanger.UI
         private TMP_Dropdown selectSeason;
         private Toggle saveSeasonToggle;
         
-
-        private void Awake()
+        protected override void Awake()
         {
             Instance = this;
             SceneManager.sceneLoaded += SceneLoaded;
-            LoadBundle.OnBundleLoaded += OnBundleLoaded;
+            LoadBundle.Instance.OnBundleLoaded += OnBundleLoaded;
         }
 
         private void SceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
