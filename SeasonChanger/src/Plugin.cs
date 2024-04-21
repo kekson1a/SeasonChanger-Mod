@@ -21,7 +21,7 @@ namespace SeasonChanger
 
         private void Awake()
         {
-           //p gameObject.hideFlags = HideFlags.HideAndDontSave;
+            gameObject.hideFlags = HideFlags.HideAndDontSave;
             // Plugin startup logic
             Logger.LogInfo($"hi, SeasonChanger of version {PluginInfo.VERSION} is loaded");
 			Logger.LogInfo("Open your console with [F8] and type \"datemenu\" to open this mod's menu");
