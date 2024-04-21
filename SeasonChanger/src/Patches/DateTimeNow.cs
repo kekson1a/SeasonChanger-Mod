@@ -10,7 +10,7 @@ namespace SeasonChanger.Patches
         [HarmonyPatch(typeof(DateTime), "get_Now")]
         private static bool Prefix(ref DateTime __result)
         {
-            if (DateMenu.Instance.SelectedSeason == DateMenu.SeasonalDate.None)
+            if (DateMenu.SelectedSeason == DateMenu.SeasonalDate.None)
                 return true;
 
             __result = GetPatchedDate();
@@ -21,7 +21,7 @@ namespace SeasonChanger.Patches
         {
             var result = RealDate.Now;
 
-            switch (DateMenu.Instance.SelectedSeason)
+            switch (DateMenu.SelectedSeason)
             {
                 case DateMenu.SeasonalDate.Easter:
                     result = GetEaster(result.Year);

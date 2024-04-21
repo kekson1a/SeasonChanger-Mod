@@ -12,7 +12,7 @@ namespace SeasonChanger.Patches
         private static bool Prefix(ref SandboxSaver __instance)
         {
 
-            if (DateMenu.Instance.SelectedSeason != DateMenu.SeasonalDate.None)
+            if (DateMenu.SelectedSeason != DateMenu.SeasonalDate.None)
             {
                 __instance.Save(string.Format("{0}-{1}-{2} {3}-{4}-{5}", new object[]
 {

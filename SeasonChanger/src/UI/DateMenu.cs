@@ -12,8 +12,8 @@ namespace SeasonChanger.UI
     public class DateMenu : MonoSingleton<DateMenu>
     {
         //public static DateMenu Instance;
-        public SeasonalDate SelectedSeason;
-        public bool SaveSeason;
+        public static SeasonalDate SelectedSeason;
+        public static bool SaveSeason;
 
         private GameObject seasonMenu;
         private Canvas seasonCanvas;
@@ -79,6 +79,12 @@ namespace SeasonChanger.UI
         {
             SaveSeason = doSave;
             Plugin.Instance.ConfigSaveSeasons.Value = SaveSeason;
+            if (!SaveSeason)
+                Plugin.Instance.ConfigLastUsedSeason.Value = (int)SeasonalDate.None;
+
+            if (SaveSeason) 
+                Plugin.Instance.ConfigLastUsedSeason.Value = (int)SelectedSeason;
+
         }
 
         public void OpenSeasonMenu()
@@ -88,8 +94,9 @@ namespace SeasonChanger.UI
 
         public void TriggerLoadConfig()
         {
-            selectSeason.value = (int)SelectedSeason;
             saveSeasonToggle.isOn = SaveSeason;
+            if (!SaveSeason) return;
+            selectSeason.value = (int)SelectedSeason;
         }
 
         public enum SeasonalDate

@@ -12,6 +12,7 @@ namespace SeasonChanger.Patches
         private static void Postfix(Console __instance)
         {
             __instance.RegisterCommand(new OpenSeasonMenu());
+            var ignoreThis = SeasonChanger.UI.DateMenu.Instance; //if removed, "setdate" command will trigger a NullReferenceException
         }
     }
 }

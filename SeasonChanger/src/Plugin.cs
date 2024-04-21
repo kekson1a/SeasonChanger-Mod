@@ -6,8 +6,8 @@ using HarmonyLib;
 
 using UnityEngine;
 
-using static SeasonChanger.UI.DateMenu;
 using System.Collections.Generic;
+using SeasonalDate = SeasonChanger.UI.DateMenu.SeasonalDate;
 
 namespace SeasonChanger
 {
@@ -47,8 +47,8 @@ namespace SeasonChanger
                         "SeasonOverride",
                         0,
                         "Saved season you selected (uses enum DateMenu.SeasonalDate)");
-            DateMenu.Instance.SelectedSeason = (SeasonalDate)ConfigLastUsedSeason.Value;
-            DateMenu.Instance.SaveSeason = ConfigSaveSeasons.Value;
+            DateMenu.SelectedSeason = (SeasonalDate)ConfigLastUsedSeason.Value;
+            DateMenu.SaveSeason = ConfigSaveSeasons.Value;
         }
 
         public void PrintError(string message)
