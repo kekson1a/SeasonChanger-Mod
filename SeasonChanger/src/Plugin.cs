@@ -60,6 +60,6 @@ namespace SeasonChanger
 	{
         public const string GUID = "kekson1a." + NAME;
 		public const string NAME = "SeasonChanger";
-		public const string VERSION = "0.1.3";
+		public const string VERSION = "0.1.4";
 	}
 }
