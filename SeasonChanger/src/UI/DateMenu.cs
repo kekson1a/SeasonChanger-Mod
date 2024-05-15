@@ -8,12 +8,11 @@ using UnityEngine.UI;
 
 namespace SeasonChanger.UI
 {
-    [ConfigureSingleton(SingletonFlags.PersistAutoInstance | SingletonFlags.DestroyDuplicates)]
-    public class DateMenu : MonoSingleton<DateMenu>
+    public class DateMenu : MonoBehaviour
     {
-        //public static DateMenu Instance;
-        public static SeasonalDate SelectedSeason;
-        public static bool SaveSeason;
+        public static DateMenu Instance;
+        public SeasonalDate SelectedSeason;
+        public bool SaveSeason;
 
         private GameObject seasonMenu;
         private Canvas seasonCanvas;
@@ -21,11 +20,12 @@ namespace SeasonChanger.UI
         private TMP_Dropdown selectSeason;
         private Toggle saveSeasonToggle;
         
-        protected override void Awake()
+
+        private void Awake()
         {
             Instance = this;
             SceneManager.sceneLoaded += SceneLoaded;
-            LoadBundle.Instance.OnBundleLoaded += OnBundleLoaded;
+            LoadBundle.OnBundleLoaded += OnBundleLoaded;
         }
 
         private void SceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
@@ -77,14 +77,11 @@ namespace SeasonChanger.UI
 
         private void SaveSeasonToggle(bool doSave)
         {
-            SaveSeason = doSave;
-            Plugin.Instance.ConfigSaveSeasons.Value = SaveSeason;
             if (!SaveSeason)
                 Plugin.Instance.ConfigLastUsedSeason.Value = (int)SeasonalDate.None;
 
-            if (SaveSeason) 
+            if (SaveSeason)
                 Plugin.Instance.ConfigLastUsedSeason.Value = (int)SelectedSeason;
-
         }
 
         public void OpenSeasonMenu()

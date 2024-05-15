@@ -6,8 +6,7 @@ using HarmonyLib;
 
 using UnityEngine;
 
-using System.Collections.Generic;
-using SeasonalDate = SeasonChanger.UI.DateMenu.SeasonalDate;
+using static SeasonChanger.UI.DateMenu;
 
 namespace SeasonChanger
 {
@@ -21,13 +20,11 @@ namespace SeasonChanger
 
         private void Awake()
         {
-            gameObject.hideFlags = HideFlags.HideAndDontSave;
             // Plugin startup logic
             Logger.LogInfo($"hi, SeasonChanger of version {PluginInfo.VERSION} is loaded");
-			Logger.LogInfo("Open your console with [F8] and type \"datemenu\" to open this mod's menu");
-            var targetObject = new GameObject("SeasonChanger Components");
-            targetObject.AddComponent<DateMenu>();
-            targetObject.AddComponent<LoadBundle>();
+			Logger.LogInfo("Open your console with [F8] and type \"setdate\" to open this mod's menu");
+            DontDestroyOnLoad(new GameObject().AddComponent<DateMenu>());
+            DontDestroyOnLoad(new GameObject().AddComponent<LoadBundle>());
 
             new Harmony(PluginInfo.GUID).PatchAll();
 
@@ -47,8 +44,8 @@ namespace SeasonChanger
                         "SeasonOverride",
                         0,
                         "Saved season you selected (uses enum DateMenu.SeasonalDate)");
-            DateMenu.SelectedSeason = (SeasonalDate)ConfigLastUsedSeason.Value;
-            DateMenu.SaveSeason = ConfigSaveSeasons.Value;
+            DateMenu.Instance.SelectedSeason = (SeasonalDate)ConfigLastUsedSeason.Value;
+            DateMenu.Instance.SaveSeason = ConfigSaveSeasons.Value;
         }
 
         public void PrintError(string message)
@@ -60,6 +57,6 @@ namespace SeasonChanger
 	{
         public const string GUID = "kekson1a." + NAME;
 		public const string NAME = "SeasonChanger";
-		public const string VERSION = "0.1.4";
+		public const string VERSION = "0.1.5";
 	}
 }
